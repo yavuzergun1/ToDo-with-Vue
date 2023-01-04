@@ -1,26 +1,37 @@
 <script>
 let id = 0;
 export default {
-
   data() {
     return {
-      sets: [[1, 2, 3, 4, 5], [6, 7, 8, 9, 10]]
-    }
+      newTodo: "",
+      todos: [
+        { id: id++, text: "Learn HTML" },
+        { id: id++, text: "Learn JavaScript" },
+        { id: id++, text: "Learn Vue" },
+      ],
+    };
   },
   methods: {
-    even(numbers) {
-      return numbers.filter(number => number % 2 === 0)
-    }
-  }
-}
+    addTodo() {
+      this.newTodo = this.todos.push({ id: id++, text: this.newTodo });
+      this.newTodo = "";
+    },
+    removeTodo(todo) {
+      this.todos = this.todos.filter((items) => items.id !== todo.id);
+    },
+  },
+};
 </script>
 
 <template>
-  <form @submit="add">
-    <input type="text" />
+  <form @submit.prevent="addTodo">
+    <input v-model="newTodo" />
+    <button>Add Todo</button>
   </form>
-<div v-for="numbers in sets">
-  {{ numbers }}
-  <div v-for="n in even(numbers)">{{ n }}</div>
-</div>
+  <ul>
+    <li v-for="todo in todos" :key="todo.id">
+      {{ todo.text }}
+      <button @click="removeTodo(todo)">X</button>
+    </li>
+  </ul>
 </template>
