@@ -19,8 +19,8 @@ export default {
   <form @submit="add">
     <input type="text" />
   </form>
-<ul v-for="numbers in sets">
+<div v-for="numbers in sets">
   {{ numbers }}
-  <li v-for="n in even(numbers)">{{ n }}</li>
-</ul>
+  <div v-for="n in even(numbers)">{{ n }}</div>
+</div>
 </template>
