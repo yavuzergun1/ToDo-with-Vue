@@ -32,7 +32,9 @@ export default {
 </script>
 
 <template>
-  <form @submit.prevent="addTodo">
+<h1>
+  ToDo
+</h1>  <form @submit.prevent="addTodo">
     <input v-model="newTodo" />
     <button>Add Todo</button>
   </form>

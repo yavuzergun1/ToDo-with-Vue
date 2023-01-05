@@ -38,6 +38,7 @@ console.log(this);
 </script>
 
 <template>
+    <h1>Fetching ToDo</h1>
   <p>Todo id: {{ todoId }}</p>
   <button @click="todoId++">Fetch next todo</button>
   <button @click="hide = !hide">
