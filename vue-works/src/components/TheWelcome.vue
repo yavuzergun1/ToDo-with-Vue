@@ -47,7 +47,7 @@ export default {
     <button @click="hide = !hide">{{hide ? "show completed" : "hide completed"}}</button>
   </ul>
 </template>
-fgd
+
 <style>
 .done {
   text-decoration: line-through;
