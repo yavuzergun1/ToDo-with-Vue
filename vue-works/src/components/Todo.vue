@@ -23,30 +23,30 @@ export default {
   },
   computed: {
     hidetodos() {
-      return this.hide
-        ? this.todos.filter((todo) =>  !todo.done)
-        : this.todos;
+      return this.hide ? this.todos.filter((todo) => !todo.done) : this.todos;
     },
   },
 };
 </script>
 
 <template>
-<h1>
-  ToDo
-</h1>  <form @submit.prevent="addTodo">
+  <h1>ToDo</h1>
+  <slot/>
+  <form @submit.prevent="addTodo">
     <input v-model="newTodo" />
     <button>Add Todo</button>
   </form>
   <ul>
-    <li v-for="todo in hidetodos" :key="todo.id" >
-      <input type="checkbox" v-model="todo.done">
-      <span :class="{ done: todo.done }" >
+    <li v-for="todo in hidetodos" :key="todo.id">
+      <input type="checkbox" v-model="todo.done" />
+      <span :class="{ done: todo.done }">
         {{ todo.text }}
       </span>
       <button @click="removeTodo(todo)">X</button>
     </li>
-    <button @click="hide = !hide">{{hide ? "show completed" : "hide completed"}}</button>
+    <button @click="hide = !hide">
+      {{ hide ? "show completed" : "hide completed" }}
+    </button>
   </ul>
 </template>
 
