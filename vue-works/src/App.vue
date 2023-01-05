@@ -8,6 +8,7 @@ export default {
   data() {
     return {
       childMessage: "",
+      childSecondMessage: "",
     };
   },
 };
@@ -24,10 +25,16 @@ export default {
 
     <div class="wrapper">
       <!-- @RESPONSE= CHILDDAN GELEN MESAJ -->
-      <HelloWorld 
-      @response="(msg) => (childMessage = msg)" 
-      msg="You did it!" /> <!-- PARENTTAN CHILDA GİDEN MESAJ -->
-      {{ childMessage }}
+      <HelloWorld
+        @response="(msg) => (childMessage = msg)"
+        @responsee="(msge) => (childSecondMessage = msge)"
+        msg="You did it!"
+      />
+      <!-- PARENTTAN CHILDA GİDEN MESAJ -->
+      <div>
+        {{ childMessage }}
+      </div>
+      {{ childSecondMessage }}
     </div>
   </header>
   <main>

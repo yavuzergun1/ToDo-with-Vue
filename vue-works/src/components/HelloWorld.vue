@@ -3,9 +3,10 @@ export default {
   props: {
     msg: String,
   },
-  emits: ["response"],
+  emits: ["response", "responsee"],
   created() {
     this.$emit("response", "hello from child ")
+    this.$emit("responsee", "hello from child second message ")
   }
 };
 </script>
