@@ -1,9 +1,13 @@
-<script >
+<script>
 export default {
   props: {
-    msg: String
+    msg: String,
+  },
+  emits: ["response"],
+  created() {
+    this.$emit("response", "hello from child ")
   }
-}
+};
 </script>
 
 <template>

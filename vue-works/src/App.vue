@@ -3,7 +3,15 @@ import HelloWorld from "./components/HelloWorld.vue";
 import Todo from "./components/Todo.vue";
 import Fetch from "./components/Fetch.vue";
 </script>
-
+<script>
+export default {
+  data() {
+    return {
+      childMessage: "",
+    };
+  },
+};
+</script>
 <template>
   <header>
     <img
@@ -15,7 +23,11 @@ import Fetch from "./components/Fetch.vue";
     />
 
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+      <!-- @RESPONSE= CHILDDAN GELEN MESAJ -->
+      <HelloWorld 
+      @response="(msg) => (childMessage = msg)" 
+      msg="You did it!" /> <!-- PARENTTAN CHILDA GİDEN MESAJ -->
+      {{ childMessage }}
     </div>
   </header>
   <main>
@@ -23,7 +35,7 @@ import Fetch from "./components/Fetch.vue";
   </main>
   <br />
   <br />
-<br>
+  <br />
   <div>
     <Fetch />
   </div>
