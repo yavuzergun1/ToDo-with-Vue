@@ -1,41 +1,55 @@
 <script>
+let id = 0;
 export default {
   data() {
     return {
-      todoId: 1,
-      todoData: null,
-      todosData: [],
+      newTodo: "",
+      todos: [{ id: id++, text: "Learn HTML", done: true }],
       hide: false,
     };
   },
   methods: {
-    async fetchData() {
-      this.todoData = null;
-      const res = await fetch(
-        `https://jsonplaceholder.typicode.com/todos/${this.todoId}`
-      );
-      this.todoData = await res.json();
-      this.todosData = [...this.todosData, this.todoData]
+    addTodo() {
+      this.newTodo = this.todos.push({
+        id: id++,
+        text: this.newTodo,
+        done: false,
+      });
+      this.newTodo = "";
+    },
+    removeTodo(todo) {
+      this.todos = this.todos.filter((items) => items.id !== todo.id);
     },
   },
-  mounted() {
-    this.fetchData();
-  },
-  watch: {
-    todoId() {
-      this.fetchData();
+  computed: {
+    hidetodos() {
+      return this.hide
+        ? this.todos.filter((todo) =>  !todo.done)
+        : this.todos;
     },
   },
 };
 </script>
 
 <template>
-  <p>Todo id: {{ todoId }}</p>
-  <button @click="todoId++">Fetch next todo</button>
-  <button @click="hide = !hide" >{{hide ? "Show Hide Todos" : "Hide Todos"}}</button>
-  <p v-if="!todoData">Loading...</p>
-  <ul v-else v-for="todoData in todosData">
-
-    <li v-show= "!hide">{{ todoData }}</li>
+  <form @submit.prevent="addTodo">
+    <input v-model="newTodo" />
+    <button>Add Todo</button>
+  </form>
+  <ul>
+    <li v-for="todo in hidetodos" :key="todo.id" >
+      <input type="checkbox" v-model="todo.done">
+      <span :class="{ done: todo.done }" >
+        {{ todo.text }}
+      </span>
+      <button @click="removeTodo(todo)">X</button>
+    </li>
+    <button @click="hide = !hide">{{hide ? "show completed" : "hide completed"}}</button>
   </ul>
 </template>
+
+<style>
+.done {
+  text-decoration: line-through;
+}
+</style>

@@ -1,6 +1,7 @@
 <script setup>
 import HelloWorld from "./components/HelloWorld.vue";
 import Todo from "./components/Todo.vue";
+import Fetch from "./components/Fetch.vue";
 </script>
 
 <template>
@@ -17,14 +18,15 @@ import Todo from "./components/Todo.vue";
       <HelloWorld msg="You did it!" />
     </div>
   </header>
-
   <main>
     <Todo />
   </main>
-
-  <main>
-    
-  </main>
+  <br />
+  <br />
+<br>
+  <div>
+    <Fetch />
+  </div>
 </template>
 
 <style scoped>
