@@ -2,15 +2,17 @@
 import HelloWorld from "./components/HelloWorld.vue";
 import Todo from "./components/Todo.vue";
 import Fetch from "./components/Fetch.vue";
+import Works from "./components/works.vue";
 </script>
 <script>
 export default {
-  data() {
-    return {
-      childMessage: "",
-      childSecondMessage: "",
-    };
-  },
+    data() {
+        return {
+            childMessage: "",
+            childSecondMessage: "",
+        };
+    },
+    components: { Works }
 };
 </script>
 <template>
@@ -38,7 +40,6 @@ export default {
     </div>
   </header>
   <main>
-    <Todo />
   </main>
   <br />
   <br />
@@ -46,6 +47,7 @@ export default {
   <Todo> this message comes from APP Component </Todo>
   <div>
     <Fetch />
+    <Works/>
   </div>
 </template>
 
