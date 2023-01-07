@@ -20,7 +20,7 @@ export default {
       class="logo"
       src="./assets/logo.svg"
       width="125"
-      height="12"
+      height="125"
     />
 
     <div class="wrapper">
@@ -51,6 +51,7 @@ export default {
 
 <style scoped>
 header {
+  display: block;
   line-height: 1.5;
 }
 

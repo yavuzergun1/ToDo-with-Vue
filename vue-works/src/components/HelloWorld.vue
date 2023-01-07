@@ -5,8 +5,8 @@ export default {
   },
   emits: ["response", "responsee"],
   created() {
-    this.$emit("response", "hello from child ")
-    this.$emit("responsee", "hello from child second message ")
+    this.$emit("response", "hello from HelloWorld component ")
+    this.$emit("responsee", "hello from HelloWorld component second message ")
   }
 };
 </script>
