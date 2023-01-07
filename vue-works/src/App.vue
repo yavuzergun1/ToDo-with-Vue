@@ -20,7 +20,7 @@ export default {
       class="logo"
       src="./assets/logo.svg"
       width="125"
-      height="125"
+      height="12"
     />
 
     <div class="wrapper">
