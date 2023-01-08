@@ -35,21 +35,25 @@ export default {
     <button @click="makePink">PINK</button>
   </div>
 
-  <div
-    style="width: 100px; height: 100px; margin-top: 20px"
-    :class="[red ? 'red' : blue ? 'blue' : pink ? 'pink' : null]"
-  ></div>
+  <!-- DEĞİŞKEN CLASS YAPISI HEM DİZİ İÇİNDE HEM DE OBJECT İÇİNDE AŞAĞIDAKİ ŞEKİLDE YAPILABİLİR. -->
 
-  <div
-    style="width: 100px; height: 100px; margin-top: 20px"
-    :class="[
-      {
-        red: red,
-        blue: blue,
-        pink: pink,
-      },
-    ]"
-  ></div>
+  <div  style="display: flex">
+    <div
+      style="width: 100px; height: 100px; margin-top: 20px; margin-right: 25px;"
+      :class="[red ? 'red' : blue ? 'blue' : pink ? 'pink' : null]"
+    ></div>
+
+    <div
+      style="width: 100px; height: 100px; margin-top: 20px"
+      :class="[
+        {
+          red: red,
+          blue: blue,
+          pink: pink,
+        },
+      ]"
+    ></div>
+  </div>
 </template>
 
 <style scoped>
