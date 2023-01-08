@@ -2,13 +2,18 @@
 export default {
   data() {
     return {
-      colors: ["red", "blue", "pink"],
       red: false,
       blue: true,
       pink: false,
+      setBlue: "blue",
+      setRed: "red",
+      setPink: "pink",
+      className: null,
     };
   },
+
   methods: {
+    // UZUN YÖNTEM
     makeRed() {
       this.red = true;
       this.blue = false;
@@ -24,6 +29,11 @@ export default {
       this.blue = false;
       this.pink = true;
     },
+    // KISA VE PRATİK YÖNTEM
+    setColor(color) {
+      this.className = color;
+      console.log(color);
+    },
   },
 };
 </script>
@@ -37,9 +47,9 @@ export default {
 
   <!-- DEĞİŞKEN CLASS YAPISI HEM DİZİ İÇİNDE HEM DE OBJECT İÇİNDE AŞAĞIDAKİ ŞEKİLDE YAPILABİLİR. -->
 
-  <div  style="display: flex">
+  <div style="display: flex">
     <div
-      style="width: 100px; height: 100px; margin-top: 20px; margin-right: 25px;"
+      style="width: 100px; height: 100px; margin-top: 20px; margin-right: 25px"
       :class="[red ? 'red' : blue ? 'blue' : pink ? 'pink' : null]"
     ></div>
 
@@ -52,6 +62,19 @@ export default {
           pink: pink,
         },
       ]"
+    ></div>
+  </div>
+
+  <div>
+    <div style="margin-top: 25px">
+      <button @click="setColor(setRed)">RED</button>
+      <button @click="setColor(setBlue)">BLUE</button>
+      <button @click="setColor(setPink)">PINK</button>
+    </div>
+
+    <div
+      style="width: 100px; height: 100px; margin-top: 20px"
+      :class="className"
     ></div>
   </div>
 </template>
