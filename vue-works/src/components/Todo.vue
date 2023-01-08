@@ -30,6 +30,7 @@ export default {
 </script>
 
 <template>
+  <!-- THIS SLOT COMES FROM APP COMPONENT  -->
   <slot />
   <h1>ToDo</h1>
   <form @submit.prevent="addTodo">
