@@ -36,13 +36,24 @@ export default {
   </div>
 
   <div
-    style="width: 100px; height: 100px"
-    :class="[red ? 'red' : blue ? 'bue' : pink ? 'pink' : null]"
+    style="width: 100px; height: 100px; margin-top: 20px"
+    :class="[red ? 'red' : blue ? 'blue' : pink ? 'pink' : null]"
+  ></div>
+
+  <div
+    style="width: 100px; height: 100px; margin-top: 20px"
+    :class="[
+      {
+        red: red,
+        blue: blue,
+        pink: pink,
+      },
+    ]"
   ></div>
 </template>
 
 <style scoped>
-.bue {
+.blue {
   background-color: blue;
 }
 .red {
