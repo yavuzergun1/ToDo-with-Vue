@@ -6,13 +6,13 @@ import Works from "./components/works.vue";
 </script>
 <script>
 export default {
-    data() {
-        return {
-            childMessage: "",
-            childSecondMessage: "",
-        };
-    },
-    components: { Works }
+  data() {
+    return {
+      childMessage: "",
+      childSecondMessage: "",
+    };
+  },
+  components: { Works },
 };
 </script>
 <template>
@@ -39,15 +39,21 @@ export default {
       {{ childSecondMessage }}
     </div>
   </header>
-  <main>
-  </main>
+
   <br />
   <br />
   <br />
-  <Todo> this message comes from APP Component </Todo>
+
+  <div>
+    <Todo> this message comes from APP Component </Todo>
+  </div>
+
   <div>
     <Fetch />
-    <Works/>
+  </div>
+
+  <div>
+    <Works />
   </div>
 </template>
 
