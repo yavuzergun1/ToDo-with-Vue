@@ -17,7 +17,7 @@ export default {
       this.todoData = await res.json();
       this.todosData = [...this.todosData, this.todoData];
       },
-       
+        
 },
 mounted() {
     this.fetchData();
@@ -28,7 +28,7 @@ watch: {
     },
 },
 computed: {
- hidetodos() {
+hidetodos() {
         return this.hide
         ? this.todosData.filter((todo) => !todo.completed)
         : this.todosData;

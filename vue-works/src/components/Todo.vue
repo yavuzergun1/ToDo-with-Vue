@@ -4,7 +4,7 @@ export default {
   data() {
     return {
       newTodo: "",
-      todos: [{ id: id++, text: "Learn HTML", done: true }],
+      todos: [{ id: id++, text: "Learn HTML", done: true, priority: true }],
       hide: false,
     };
   },
@@ -31,7 +31,7 @@ export default {
 
 <template>
   <h1>ToDo</h1>
-  <slot/>
+  <slot />
   <form @submit.prevent="addTodo">
     <input v-model="newTodo" />
     <button>Add Todo</button>
@@ -39,10 +39,14 @@ export default {
   <ul>
     <li v-for="todo in hidetodos" :key="todo.id">
       <input type="checkbox" v-model="todo.done" />
-      <span :class="{ done: todo.done }">
+      <span
+        :class="{ done: todo.done, priority: todo.priority }"
+        class="static-class"
+      >
         {{ todo.text }}
       </span>
       <button @click="removeTodo(todo)">X</button>
+      <button @click="todo.priority = !todo.priority">Priority</button>
     </li>
     <button @click="hide = !hide">
       {{ hide ? "show completed" : "hide completed" }}
@@ -53,5 +57,8 @@ export default {
 <style>
 .done {
   text-decoration: line-through;
+}
+.priority {
+  color: red;
 }
 </style>
