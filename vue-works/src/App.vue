@@ -2,7 +2,7 @@
 import HelloWorld from "./components/HelloWorld.vue";
 import Todo from "./components/Todo.vue";
 import Fetch from "./components/Fetch.vue";
-import Works from "./components/works.vue";
+import Works from "./components/ColorButtons.vue";
 </script>
 <script>
 export default {
