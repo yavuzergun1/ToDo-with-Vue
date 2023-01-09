@@ -9,6 +9,7 @@ export default {
 </script>
 
 <template>
-  <input v-model="message" />
+  <!-- LAZY İLE ENTERA BASINCA ÇALIŞIR -->
+  <input v-model.lazy="message" />
   <div>{{ message }}</div>
 </template>
