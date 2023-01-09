@@ -5,9 +5,6 @@ export default {
       red: false,
       blue: true,
       pink: false,
-      setBlue: "blue",
-      setRed: "red",
-      setPink: "pink",
       className: null,
     };
   },
@@ -67,9 +64,9 @@ export default {
 
   <div>
     <div style="margin-top: 25px">
-      <button @click="setColor(setRed)">RED</button>
-      <button @click="setColor(setBlue)">BLUE</button>
-      <button @click="setColor(setPink)">PINK</button>
+      <button @click="setColor('red')">RED</button>
+      <button @click="setColor('blue')">BLUE</button>
+      <button @click="setColor('pink')">PINK</button>
     </div>
 
     <div
