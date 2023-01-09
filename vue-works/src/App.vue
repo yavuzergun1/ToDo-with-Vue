@@ -11,6 +11,7 @@ export default {
     return {
       childMessage: "",
       childSecondMessage: "",
+      message: "hello",
     };
   },
 };
@@ -59,6 +60,9 @@ export default {
   <div>
     <Works />
   </div>
+  <br />
+
+  <div><Vmodel  /></div>
 </template>
 
 <style scoped>

@@ -1,13 +1,14 @@
 <script>
 export default {
-  props: ['modelValue'],
-  emits: ['update:modelValue']
-}
+  data() {
+    return {
+      message: "",
+    };
+  },
+};
 </script>
 
 <template>
-  <input
-    :value="modelValue"
-    @input="$emit('update:modelValue', $event.target.value)"
-  />
+  <input v-model="message" />
+  <div>{{ message }}</div>
 </template>
