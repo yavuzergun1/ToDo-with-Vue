@@ -26,14 +26,14 @@ export default {
       return this.hide ? this.todos.filter((todo) => !todo.done) : this.todos;
     },
   },
-};
+}; 
 </script>
 
 <template>
   <!-- THIS SLOT COMES FROM APP COMPONENT  -->
   <slot />
   <h1>ToDo</h1>
-  <form @submit.prevent="addTodo">
+  <form  @submit.prevent="addTodo">
     <input v-model="newTodo" />
     <button>Add Todo</button>
   </form>
@@ -51,6 +51,9 @@ export default {
     </li>
     <button @click="hide = !hide">
       {{ hide ? "show completed" : "hide completed" }}
+    </button>
+    <button @click="hideAll == !hideAll">
+    {{ hideAll ? "show all" : "hide all" }}
     </button>
   </ul>
 </template>
