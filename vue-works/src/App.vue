@@ -3,6 +3,7 @@ import HelloWorld from "./components/HelloWorld.vue";
 import Todo from "./components/Todo.vue";
 import Fetch from "./components/Fetch.vue";
 import Works from "./components/ColorButtons.vue";
+import Vmodel from "./components/Vmodel.vue";
 </script>
 <script>
 export default {
@@ -12,7 +13,6 @@ export default {
       childSecondMessage: "",
     };
   },
-  components: { Works },
 };
 </script>
 <template>
