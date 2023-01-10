@@ -73,7 +73,7 @@ export default {
 
   <div><Forms /></div>
   <div>
-    <input v-model="messageToChild" />
+    <input v-model.lazy="messageToChild" />
     <InjectChild />
   </div>
 </template>
