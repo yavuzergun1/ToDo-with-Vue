@@ -3,7 +3,7 @@ import HelloWorld from "./components/HelloWorld.vue";
 import Todo from "./components/Todo.vue";
 import Fetch from "./components/Fetch.vue";
 import Works from "./components/ColorButtons.vue";
-import Vmodel from "./components/Vmodel.vue";
+import Forms from "./components/Forms.vue";
 </script>
 <script>
 export default {
@@ -62,7 +62,7 @@ export default {
   </div>
   <br />
 
-  <div><Vmodel  /></div>
+  <div><Forms /></div>
 </template>
 
 <style scoped>

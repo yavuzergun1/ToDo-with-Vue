@@ -28,7 +28,8 @@ export default {
 
     <div>
       <input
-        @keyup="thirdMessage = $event.target.value"
+        :value="thirdMessage"
+        @input="thirdMessage = $event.target.value"
         placeholder="with event target"
       />
       <div>{{ thirdMessage }}</div>

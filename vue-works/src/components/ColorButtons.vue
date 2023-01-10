@@ -36,6 +36,7 @@ export default {
 </script>
 
 <template>
+  <h1>Buttons and conditional rendering</h1>
   <div>
     <button @click="makeRed">RED</button>
     <button @click="makeBlue">BLUE</button>
