@@ -6,6 +6,7 @@ export default {
       newTodo: "",
       todos: [{ id: id++, text: "Learn HTML", done: true, priority: true }],
       hide: false,
+      hideAll: false,
     };
   },
   methods: {
@@ -26,19 +27,19 @@ export default {
       return this.hide ? this.todos.filter((todo) => !todo.done) : this.todos;
     },
   },
-}; 
+};
 </script>
 
 <template>
   <!-- THIS SLOT COMES FROM APP COMPONENT  -->
   <slot />
   <h1>ToDo</h1>
-  <form  @submit.prevent="addTodo">
+  <form @submit.prevent="addTodo">
     <input v-model="newTodo" />
     <button>Add Todo</button>
   </form>
   <ul>
-    <li v-for="todo in hidetodos" :key="todo.id">
+    <li v-for="todo in hidetodos" :key="todo.id" v-if="!hideAll">
       <input type="checkbox" v-model="todo.done" />
       <span
         :class="{ done: todo.done, priority: todo.priority }"
@@ -52,8 +53,8 @@ export default {
     <button @click="hide = !hide">
       {{ hide ? "show completed" : "hide completed" }}
     </button>
-    <button @click="hideAll == !hideAll">
-    {{ hideAll ? "show all" : "hide all" }}
+    <button @click="hideAll = !hideAll">
+      {{ hideAll ? "show all" : "hide all" }}
     </button>
   </ul>
 </template>
