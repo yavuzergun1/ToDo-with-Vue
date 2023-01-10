@@ -5,7 +5,7 @@ export default {
       red: false,
       blue: true,
       pink: false,
-      className: null,
+      className: "red",
     };
   },
 
