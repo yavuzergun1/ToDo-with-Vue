@@ -4,6 +4,8 @@ import Todo from "./components/Todo.vue";
 import Fetch from "./components/Fetch.vue";
 import Works from "./components/ColorButtons.vue";
 import Forms from "./components/Forms.vue";
+import InjectChild from "./components/InjectChild.vue";
+import { computed } from "vue";
 </script>
 <script>
 export default {
@@ -12,6 +14,13 @@ export default {
       childMessage: "",
       childSecondMessage: "",
       message: "hello",
+      messageToChild: "say hello to grandchild",
+    };
+  },
+  provide() {
+    return {
+      // messageToChild: "hello",
+      messageToChild: computed(() => this.messageToChild),
     };
   },
 };
@@ -63,6 +72,10 @@ export default {
   <br />
 
   <div><Forms /></div>
+  <div>
+    <input v-model="messageToChild" />
+    <InjectChild />
+  </div>
 </template>
 
 <style scoped>

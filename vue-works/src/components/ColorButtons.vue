@@ -75,6 +75,11 @@ export default {
       :class="className"
     ></div>
   </div>
+  <form >
+    <input type="checkbox">
+    <input type="checkbox">
+    <input type="checkbox">
+  </form>
 </template>
 
 <style scoped>
